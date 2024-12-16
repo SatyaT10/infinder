@@ -4,8 +4,8 @@ const MainPage = require('../Modal/mainForm');
 
 const newUser = async (req, res) => {
     try {
-        const { name, businessEmail, website, clinicName, mobileNo } = req.body;
-        if (!name || !businessEmail || !website || !clinicName || !mobileNo) {
+        const { name, businessEmail, website, clinicName, mobileNo,printing_materials,query,isNewsletter } = req.body;
+        if (!name || !businessEmail || !mobileNo) {
             return res.status(400).json({
                 success: false,
                 message: "All fields are required!"
@@ -23,7 +23,10 @@ const newUser = async (req, res) => {
             businessEmail,
             website,
             clinicName,
-            mobileNo
+            mobileNo,
+            printing_materials,
+            query,
+            isNewsletter
         })
         res.status(200).json({
             success: true,
