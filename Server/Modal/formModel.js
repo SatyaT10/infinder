@@ -26,6 +26,12 @@ const formSchema = new Schema({
     isNewsletter: {
         type: Number,
         default: 0
+    },
+    printing_materials:{
+        type:[]
+    },
+    query:{
+        type:String
     }
 })
 
